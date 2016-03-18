@@ -33,7 +33,7 @@ var AllDishesView = function (container, model) {
 				dishDiv.className = "dish-container"; //lägger till classname
 				dishDiv.id = String(currentDish.RecipeID); //lägger till id
 				//lägger till innehållet i dishdiv (info om dishen)
-				dishDiv.innerHTML = "<div class='dish-image'><img src='images/" 
+				dishDiv.innerHTML = "<div class='dish-image'><img src='" 
 				+ String(currentDish.ImageURL) + "'/></div><div class='dish-name'>" 
 				+ String(currentDish.Title) 
 				+ "</div><div class='dish-info'>" + String(currentDish.Subcategory) 

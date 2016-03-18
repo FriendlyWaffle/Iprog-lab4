@@ -12,7 +12,7 @@ var DishInfoView = function (container, model) {
 	this.dishConfirmButton = container.find("#confirmDish");
 	this.dishID = "";
 
-	var id = 1;
+	var id = undefined;
 
 
 	// register to observe the model

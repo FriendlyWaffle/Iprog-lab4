@@ -177,7 +177,7 @@ var DinnerModel = function() {
 	      	success: cb
 	    });
 		// if result === undefined then...! (felkontroll)
-		console.log("Ajax request 2");
+		console.log("Ajax request done");
 		//cb(data);
 
 	    //console.log("dish", data);
