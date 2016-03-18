@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+  	<div class="container-fluid wrapper">
+		<div class="row index" id="header">
+			<h1>HOMELETTE <small>From the best chefs in the world directly into your kitchen</small></h1>
+		</div>
+	  	<!-- 
+	  		indexView ====================================
+	  	-->
+		<div class="row" id="indexView">
+			<div class="col-md-6 intro-text">
+				<h3>A Home Dinner Service</h3>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero. Nam quis velit fringilla, tempus enim nec, scelerisque odio. Mauris interdum lacus porta mauris convallis, eu ultrices dui sagittis.
+				</p>
+				<p>start quickly</p>
+				<button class="btn btn-primary" type="submit" id="continueToDinner">Create new dinner</button>
+			</div>
+		</div> <!-- end indexView -->
+
+		<!-- 
+	  		dinnerOptionView ====================================
+	  	-->
+		<div class="col-md-2" id="dinnerOptionView" style="display:none">
+			<h5>My Dinner</h5>
+			<p>
+				People: <span id="numberOfGuests">4</span> 
+				<button id="minusGuest" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-minus"></span></button>
+				<button id="plusGuest" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+			</p>
+			<table class="table table-hover" id="menuTable">
+				<tr class="table-header">
+						<td>Dish name</td>
+						<td class="right-align">Cost</td>
+					</tr>
+					<tr>
+						<td>Lasagne</td>
+						<td class="right-align">77.20</td>
+					</tr>
+					<tr>
+						<td>Pending</td>
+						<td class="right-align">0.00</td>
+					</tr>
+					<tr class="right-align">
+						<td colspan="2" class="border-top">
+							SEK <span id="totalCost">0.00</span>
+						</td>
+					</tr>
+			</table>
+			
+			<button class="btn btn-primary" type="submit" id="confirmDinner">Confirm dinner</button>
+			
+		</div> <!-- dinnerOptionView -->
+
+		<!-- 
+	  		allDishesView ====================================
+	  	-->
+	  	<div class="col-md-10" id="allDishesView" style="display:none">
+				<div class="col-md-12" id="searchField">
+					<h4>Select dish</h4>
+					<form id="selectDish" class="form-inline">
+						<input type="text" id="keywords" name="keywords" class="form-control" placeholder="Enter key words"/>
+						<select name="dishType" class="form-control" id="dishType">
+							<option value="starter">Starter</option>
+							<option value="main dish">Main</option>
+							<option value="dessert">Dessert</option>
+						</select>
+				
+						<input class="btn btn-primary" id="searchDishButton" type="button" value="search">
+					</form>
+				</div>
+				<div class="col-md-12">
+					<div class="allDishes row" id="allDishes">
+						<!--<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/toast.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+							<div class="dish-info">
+								Lorem ipsum dolor si meta
+							</div>
+						</div>
+						<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/toast.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+						</div>
+						<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/sourdough.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+						</div>
+						<div class="dish-container">
+							<div class="dish-image">
+								<img src="images/toast.jpg"/>
+							</div>
+							<div class="dish-name">
+								Toast
+							</div>
+						</div> -->
+					</div>
+				</div>
+			</div> <!-- end allDishesView -->
+
+	  	<!-- 
+	  		dishInfoView ====================================
+	  	-->
+		<div class="col-md-10" id="dishInfoView" style="display:none;">
+			<div class="col-md-6">
+				<h2 id="dishName">Toast</h2>
+				<span id="dishID" ></span>
+				<div id="dishImage">
+					<img src="images/toast.jpg"/>
+				</div>
+			</div>
+			<div class="col-md-6" id="ingredients">
+				<table class="table" id="ingredientTable">
+					<tr class="table-header">
+						<td colspan="4">Ingredients</td>
+					</tr>
+					<tr>
+						<td class="amount">2bsp</td>
+						<td class="name">olive oil</td>
+						<td class="currency">SEK</td>
+						<td class="price">0.20</td>
+					</tr>
+					<tr>
+						<td class="amount">2bsp</td>
+						<td class="name">olive oil</td>
+						<td class="currency">SEK</td>
+						<td class="price">0.20</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="border-top">
+						</td>
+						<td class="border-top">SEK</td>
+						<td class="total border-top">77</td>
+					</tr>
+				</table>
+				<button class="btn btn-primary btn-sm right-align" id="confirmDish">Confirm dish</button>
+			</div>
+
+			<div class="col-md-12">
+				<h2>Preparations</h2>
+				<p id="dishInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero. Nam quis velit fringilla, tempus enim nec, scelerisque odio. Mauris interdum lacus porta mauris convallis, eu ultrices dui sagittis.</p>
+			</div>
+		</div> <!-- end dishinfoview -->
+
+		<!-- 
+
+		fullMenuView ====================================
+		
+		-->
+		<div id="fullMenuView" style="display:none">
+				<div class="row">
+					<div class="col-md-12" id="myDinner">
+						<h3>My dinner: <span id="dinnerGuests"></span><button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+					</div>
+				</div>
+				<div class="row one" id="menuDishes">
+					<div class="col-md-6 halfPageContainer">
+						<div class="col-md-3 dish-image">
+							<img src="images/toast.jpg">
+						</div>
+						<div class="col-md-8">
+							<h2 class="noMargin dishHeaderPadding">TOAST</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 halfPageContainer">
+						<div class="col-md-9">
+							<h5 class="extraMargin dishHeaderPadding">PREPARATION</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. 
+								<br/>
+								<br/>
+								Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero. Nam quis velit fringilla, tempus enim nec, scelerisque odio. Mauris interdum lacus porta mauris convallis, eu ultrices dui sagittis.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end fullMenuView -->
+
+			<!-- 
+
+			dinnerOverviewView ===========================
+
+			-->
+			<div id ="dinnerOverviewView" style="display:none;">
+				<div class="row">
+					<div class="col-md-12" id="myDinner">
+						<h3>My dinner: <span id="dinnerGuests"></span><button class="btn btn-primary" id="goBack" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+					</div>
+				</div>
+				<div class="row" align="center" id="menuOverview">
+					
+				</div>
+				<div class="row print-recipe-container">
+					<div class="horizontalLine">
+						</div>
+						<div class="horizontalLinePlacing">
+							<button class="btn btn-primary" id="goButton" type="submit">Print Full Recipe</button>
+						</div>
+				</div>
+			</div> <!-- end dinnerOverviewView -->
+
+	</div> <!-- end wrapper -->
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <!-- BigOven for dynamic data -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/indexView.js"></script>
+	<script src="js/view/indexViewController.js"></script>
+	<script src="js/view/dinnerOptionView.js"></script>
+	<script src="js/view/dinnerOptionViewController.js"></script>
+	<script src="js/view/allDishesView.js"></script>
+	<script src="js/view/allDishesController.js"></script>
+	<script src="js/view/dishInfoView.js"></script>
+	<script src="js/view/dishInfoViewController.js"></script>
+	<script src="js/view/fullMenuView.js"></script>
+	<script src="js/view/fullMenuViewController.js"></script>
+	<script src="js/view/dinnerOverviewView.js"></script>
+	<script src="js/view/dinnerOverviewViewController.js"></script>
+	<script src="js/view/overallController.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dinner planner</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+
+		<!-- Our stylesheet -->
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<!-- full width container -->
+		<div class="container-fluid">
+			<!-- full width row -->
+			<div id="header" class="row">
+				<h1>HOMELETTE <small> From the best chefs in the world directly into your kitchen</small></h1>
+			</div>
+			
+			<div id="fullMenuView" >
+				<div class="row">
+					<div class="col-md-12" id="myDinner">
+						<h3>My dinner: 4 people<button class="btn btn-primary" type="submit" style="float: right;">Go back and edit dinner</button></h3>
+					</div>
+				</div>
+				<div class="row one" id="menuDishes">
+					<div class="col-md-6 halfPageContainer">
+						<div class="col-md-3 dish-image">
+							<img src="images/toast.jpg">
+						</div>
+						<div class="col-md-8">
+							<h2 class="noMargin dishHeaderPadding">TOAST</h2>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-6 halfPageContainer">
+						<div class="col-md-9">
+							<h5 class="extraMargin dishHeaderPadding">PREPARATION</h5>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lorem nunc. Ut tempus eros sit amet arcu rhoncus tempor. Pellentesque gravida dolor vitae lobortis gravida. Nunc aliquet pulvinar mauris et congue. Ut id laoreet dui. Sed metus justo, pharetra at diam sit amet, fringilla tincidunt augue. 
+								<br/>
+								<br/>
+								Aenean in felis in nisl mattis volutpat at ut sapien. Curabitur lorem velit, aliquam eget diam vitae, aliquam viverra libero. Nam quis velit fringilla, tempus enim nec, scelerisque odio. Mauris interdum lacus porta mauris convallis, eu ultrices dui sagittis.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div> <!-- end view -->
+		</div>
+	<!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<script src="js/app.js"></script>
+	<script src="js/model/dinnerModel.js"></script>
+	<script src="js/view/dinnerOptionView.js"></script>
+	<script src="js/view/allDishesView.js"></script>
+	<script src="js/view/dishInfoView.js"></script>
+	<script src="js/view/fullMenuView.js"></script>
+	<script src="js/view/dinnerOverviewView.js"></script>
+</html>
