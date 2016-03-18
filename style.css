@@ -129,6 +129,10 @@ td.border-top {
 	display: inline-block;
 	vertical-align: top;
 }
+
+.dish-container img { 
+	max-width: 140px;
+}
 .dish-name {
 	background: #ddd;
 	text-align: center;

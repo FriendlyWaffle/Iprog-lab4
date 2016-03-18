@@ -6,7 +6,6 @@ var AllDishesView = function (container, model) {
 
 	this.container = container;
 	this.dishContainer = container.find("#allDishes");
-	console.log("yoo",this.dishContainer);
 	this.dishTypeSelect = container.find("#dishType");
 	this.searchField = container.find("#keywords");
 	this.searchButton = container.find("#searchDishButton");
@@ -16,12 +15,14 @@ var AllDishesView = function (container, model) {
 	model.addObserver(this);
 
 	// function that loads all the dishes
+	var allDishes = [];
 	this.loadDishes = function(searchWord) {
 		this.currType = String(container.find("#dishType option:selected").val());
-		this.dishez = model.getAllDishes(this.currType, searchWord, function(dishes){
+		model.getAllDishes(this.currType, searchWord, function(dishes){
 			/* visualize the dishes */
 			console.log("in callback?");
 			console.log(dishes);
+			var allDishDivs = document.createElement('div');
 			for (var i = 0; i < 4; i++) {
 				console.log("in foor loop");
 				var currentDish = dishes.Results[i];
@@ -38,13 +39,20 @@ var AllDishesView = function (container, model) {
 				+ String(currentDish.Title) 
 				+ "</div><div class='dish-info'>" + String(currentDish.Subcategory) 
 				+ "</div>";
-				//console.log("This is our dishcont",this.dishContainer);
 				
 				//lägger in dishDiven i containern
 				//this.dishContainer.append(dishDiv);
+				allDishes.push(dishDiv);
+				console.log("This is our allDishes",allDishes);
 			}
 		});
-		console.log("loadDishes AllDishes call: ", this.dishes);
+		console.log("YO",allDishes);
+		for (var j = 0; j < allDishes.length; j++) {
+			console.log("alldishes[j]",allDishes[j]);
+			this.dishContainer.append(allDishes[j]);
+		}
+		console.log("this.dishContainer", this.dishContainer);
+		console.log("loadDishes AllDishes call: ");
 		//gets all dishes
 		//console.log(this.currType);
 
