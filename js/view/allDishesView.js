@@ -6,6 +6,7 @@ var AllDishesView = function (container, model) {
 
 	this.container = container;
 	this.dishContainer = container.find("#allDishes");
+	console.log("yoo",this.dishContainer);
 	this.dishTypeSelect = container.find("#dishType");
 	this.searchField = container.find("#keywords");
 	this.searchButton = container.find("#searchDishButton");
@@ -17,31 +18,38 @@ var AllDishesView = function (container, model) {
 	// function that loads all the dishes
 	this.loadDishes = function(searchWord) {
 		this.currType = String(container.find("#dishType option:selected").val());
-		this.dishes = model.getAllDishes(this.currType, searchWord);
+		this.dishez = model.getAllDishes(this.currType, searchWord, function(dishes){
+			/* visualize the dishes */
+			console.log("in callback?");
+			console.log(dishes);
+			for (var i = 0; i < 4; i++) {
+				console.log("in foor loop");
+				var currentDish = dishes.Results[i];
+				console.log("for loop, dishname: ", currentDish.Title);
+
+
+				//skapar ett div-element
+				var dishDiv = document.createElement('div');
+				dishDiv.className = "dish-container"; //lägger till classname
+				dishDiv.id = String(currentDish.RecipeID); //lägger till id
+				//lägger till innehållet i dishdiv (info om dishen)
+				dishDiv.innerHTML = "<div class='dish-image'><img src='images/" 
+				+ String(currentDish.ImageURL) + "'/></div><div class='dish-name'>" 
+				+ String(currentDish.Title) 
+				+ "</div><div class='dish-info'>" + String(currentDish.Subcategory) 
+				+ "</div>";
+				//console.log("This is our dishcont",this.dishContainer);
+				
+				//lägger in dishDiven i containern
+				//this.dishContainer.append(dishDiv);
+			}
+		});
 		console.log("loadDishes AllDishes call: ", this.dishes);
 		//gets all dishes
 		//console.log(this.currType);
 
 		// for each dish, add the info into the correct container
-		for (var i = 0; i < this.dishes.length; i++) {
-			var currentDish = this.dishes[i];
-			console.log("for loop: ", currentDish.Title);
-
-
-			//skapar ett div-element
-			var dishDiv = document.createElement('div');
-			dishDiv.className = "dish-container"; //lägger till classname
-			dishDiv.id = String(currentDish.RecipeID); //lägger till id
-			//lägger till innehållet i dishdiv (info om dishen)
-			dishDiv.innerHTML = "<div class='dish-image'><img src='images/" 
-			+ String(currentDish.ImageURL) + "'/></div><div class='dish-name'>" 
-			+ String(currentDish.Title) 
-			+ "</div><div class='dish-info'>" + String(currentDish.Description) 
-			+ "</div>";
-			
-			//lägger in dishDiven i containern
-			this.dishContainer.append(dishDiv);
-		}
+		
 
 	}
 
