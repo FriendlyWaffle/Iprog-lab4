@@ -27,7 +27,7 @@ var DishInfoView = function (container, model) {
 			this.dishID = id;
 			this.dishName.html(String(dish.Title));
 			this.dishImage.html("<img src='" + String(dish.ImageURL) + "'/>");
-			this.dishInfo.html(String(dish.Description));
+			this.dishInfo.html(String(dish.Instructions));
 
 			var ingredientList = "<tr class='table-header'>"
 								+ "<td colspan='4'>Ingredients</td>"
@@ -55,7 +55,7 @@ var DishInfoView = function (container, model) {
 					+ "<td class='amount'>" + String(quantity) + " " + String(unit) + "</td>"
 					+ "<td class='name'>" + String(currIngredient.Name) + "</td>"
 					+ "<td class='currency'>SEK</td>"
-					+ "<td class='price'>" + 12 + "</td>"
+					+ "<td class='price'>" + String(currIngredient.Quantity * 1) + "</td>"
 				+ "</tr>"
 
 				// add the ingredient to the ingredient list
@@ -66,7 +66,7 @@ var DishInfoView = function (container, model) {
 								+ "<td colspan='2' class='border-top'>"
 								+ "</td>"
 								+ "<td class='border-top'>SEK</td>"
-								+ "<td class='total border-top' id='totalPrice'>" + String(model.getDishPrice(this.dishID)) + "</td>"
+								+ "<td class='total border-top' id='totalPrice'>" + String(model.getDishPrice(id)) + "</td>"
 							+ "</tr>";
 
 			// update the ingredient table with the ingredient list

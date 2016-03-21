@@ -103,13 +103,14 @@ var DinnerModel = function() {
 	    for (var i = 0; i < this.menu.length; i++) {
 	      	//get the current dish in the menu
 	      	if ( this.menu[i] != null ) {
-		      	var currentDish = this.getDish(this.menu[i]);
+		      	var currentDish = this.getDishPrice(this.menu[i]);
 		        
 		        //for each ingredient, add price to menuPrice
-		        var ingredientLength = currentDish.ingredients.length;
-		        for (var j=0; j < ingredientLength; j++) {
-		          menuPrice = menuPrice + currentDish.ingredients[j].price;
-		        }        
+		        //var ingredientLength = currentDish.ingredients.length;
+		        //for (var j=0; j < ingredientLength; j++) {
+		       	//   menuPrice = menuPrice + currentDish.ingredients[j].price;
+		       	// } 
+		       	menuPrice = menuPrice + currentDish;       
 	    	}
 	      
 	    }
@@ -224,7 +225,6 @@ var DinnerModel = function() {
         }
       	return dishPrice;
     }
-
 
 
 	// the dishes variable contains an array of all the 
