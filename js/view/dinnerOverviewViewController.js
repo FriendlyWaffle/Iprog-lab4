@@ -2,12 +2,12 @@
 var DinnerOverviewViewController = function(view, model, overallController) {
  
 	view.backButton.click(function(){
-		console.log("editDinnerCall");
+		//console.log("editDinnerCall");
 		overallController.editDinner();
 	});
 
 	view.printButton.click(function(){
-		console.log("printDinnerCall");
+		//console.log("printDinnerCall");
 		overallController.printDinner();
 	});
 }

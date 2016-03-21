@@ -166,7 +166,7 @@ var DinnerModel = function() {
 	    else {
 	      var url = "http://api.bigoven.com/recipes?&api_key=" + apiKey + "&title_kw=" + titleKeyword + "&include_primarycat=" + type + "&pg=1&rpp=25";
 	    }
-	    console.log("YO AJAX REQUEST");
+	    //console.log("YO AJAX REQUEST");
 	    
     	//var result = "";
 	    $.ajax({
@@ -178,7 +178,7 @@ var DinnerModel = function() {
 	      	success: cb
 	    });
 		// if result === undefined then...! (felkontroll)
-		console.log("Ajax request done");
+		//console.log("Ajax request done");
 		//cb(data);
 
 	    //console.log("dish", data);
@@ -192,7 +192,6 @@ var DinnerModel = function() {
 	  	var url = "http://api.bigoven.com/recipe/" + recipeID + "?&api_key=" + apiKey + "&pg=1&rpp=25";
 		this.dishes = function () {
 	    	var result = "";
-	    	console.log("result");
 		    $.ajax({
 		      	type: "GET",
 		      	dataType:'json',
@@ -208,7 +207,7 @@ var DinnerModel = function() {
 		}
 
 		var dish = this.dishes(id);
-		console.log("dish: ", dish);
+		//console.log("dish: ", dish);
 		return dish;
 	 	
 	}

@@ -22,7 +22,6 @@ var DishInfoView = function (container, model) {
 	this.loadIngredientList = function(id) {
 		if (id != undefined){
 			dish = model.getDish(id);
-			console.log("ID YEAH", id); 
 			//update containers with data
 			this.dishID = id;
 			this.dishName.html(String(dish.Title));
