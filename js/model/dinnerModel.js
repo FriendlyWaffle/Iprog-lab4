@@ -175,7 +175,10 @@ var DinnerModel = function() {
 	      	cache: false,
 	      	async: false,
 	      	url: url,
-	      	success: cb
+	      	success: cb,
+	      	error: function(data) {
+		    	alert("Something's wrong! 222");
+		    }
 	    });
 		// if result === undefined then...! (felkontroll)
 		//console.log("Ajax request done");
@@ -200,7 +203,10 @@ var DinnerModel = function() {
 		      	url: url,
 		      	success: function (data) {
 		      		result = data;	
-		      }
+		      	},
+		      	error: function(data) {
+		      		alert("Something's wrong!");
+		      	}
 		    });
 		// if result === undefined then...! (felkontroll)
 		return result;  
