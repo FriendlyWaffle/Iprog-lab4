@@ -48,16 +48,16 @@ var AllDishesView = function (container, model) {
 		});
 		console.log("YO",allDishes);
 		for (var j = 0; j < allDishes.length; j++) {
-			console.log("alldishes[j]",allDishes[j]);
+			//console.log("alldishes[j]",allDishes[j]);
 			this.dishContainer.append(allDishes[j]);
 		}
+		allDishes = [];
 		console.log("this.dishContainer", this.dishContainer);
 		console.log("loadDishes AllDishes call: ");
 		//gets all dishes
 		//console.log(this.currType);
 
 		// for each dish, add the info into the correct container
-		
 
 	}
 
