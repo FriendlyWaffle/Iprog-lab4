@@ -51,7 +51,7 @@ var DishInfoView = function (container, model) {
 								+ "<td colspan='2' class='border-top'>"
 								+ "</td>"
 								+ "<td class='border-top'>SEK</td>"
-								+ "<td class='total border-top' id='totalPrice'>" + String(model.getDishPrice(dish.id)) + "</td>"
+								+ "<td class='total border-top' id='totalPrice'>" + String(model.getDishPrice(this.dishID)) + "</td>"
 							+ "</tr>";
 
 			// update the ingredient table with the ingredient list
