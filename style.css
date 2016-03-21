@@ -157,7 +157,9 @@ td.border-top {
 }
 #ingredients td { border: none;}
 
-
+#dishInfoView img {
+	max-width: 200px;
+}
 /*
 *	dinnerOverview specific ==================
 */
