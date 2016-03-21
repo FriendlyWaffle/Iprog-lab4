@@ -86,6 +86,6 @@ var AllDishesView = function (container, model) {
 	}
 
 	// load dishes on initialization
-	this.loadDishes();
+	//this.loadDishes();
 }
  
