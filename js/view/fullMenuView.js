@@ -30,7 +30,7 @@ var FullMenuView = function (container, model) {
 			var dishDiv = "<div class='row one'>"
 							+ "<div class='col-md-6 halfPageContainer'>"
 								+ "<div class='col-md-3 dish-image'>"
-									+ "<img src='images/" + String(currentDish.image) + "'/>"
+									+ "<img src='" + String(currentDish.ImageURL) + "'/>"
 								+ "</div>"
 								+ "<div class='col-md-8'>"
 									+ "<h2 class='noMargin dishHeaderPadding'>"+ String(currentDish.Title) + "</h2>"

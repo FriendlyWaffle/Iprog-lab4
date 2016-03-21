@@ -200,6 +200,10 @@ td.border-top {
 	margin-top: 155px;
 }
 
+.dish-image img {
+	max-width: 140px;
+}
+
 /*
 *	dinnerPresentation specific ==================
 */
