@@ -33,7 +33,7 @@ var AllDishesView = function (container, model) {
 			
 			else {
 				dishResults = true;
-				for (var i = 0; i < 4; i++) {
+				for (var i = 0; i < dishes.Results.length; i++) {
 
 					//console.log("in foor loop");
 					var currentDish = dishes.Results[i];
