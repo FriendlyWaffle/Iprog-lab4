@@ -27,7 +27,7 @@ var DishInfoView = function (container, model) {
 			this.dishID = id;
 			this.dishName.html(String(dish.Title));
 			this.dishImage.html("<img src='" + String(dish.ImageURL) + "'/>");
-			this.dishInfo.html(String(dish.Description));
+			this.dishInfo.html(String(dish.Instructions));
 
 			var ingredientList = "<tr class='table-header'>"
 								+ "<td colspan='4'>Ingredients</td>"
