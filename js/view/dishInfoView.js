@@ -45,7 +45,7 @@ var DishInfoView = function (container, model) {
 				}
 				var unit = "";
 				if (currIngredient.Unit === null) {
-					unit = "optional";
+					unit = " ";
 				}
 				else {
 					unit = currIngredient.Unit;
