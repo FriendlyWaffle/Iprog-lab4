@@ -22,11 +22,12 @@ var DishInfoView = function (container, model) {
 	this.loadIngredientList = function(id) {
 		if (id != undefined){
 			dish = model.getDish(id);
+			console.log("ID YEAH", id); 
 			//update containers with data
 			this.dishID = id;
 			this.dishName.html(String(dish.Title));
-			this.dishImage.html("<img src=" + String(dish.ImageURL) + "'/>");
-			this.dishInfo.html(String(dish.description));
+			this.dishImage.html("<img src='" + String(dish.ImageURL) + "'/>");
+			this.dishInfo.html(String(dish.Description));
 
 			var ingredientList = "<tr class='table-header'>"
 								+ "<td colspan='4'>Ingredients</td>"
@@ -35,12 +36,26 @@ var DishInfoView = function (container, model) {
 			// for each ingredient for this dish
 			for (var i = 0; i < dish.Ingredients.length; i++) {
 				var currIngredient = dish.Ingredients[i];
-				
+				var quantity = 0;
+				if (currIngredient.DisplayQuantity === null) {
+					quantity = 1;
+				}
+				else {
+					quantity = currIngredient.DisplayQuantity;
+				}
+				var unit = "";
+				if (currIngredient.Unit === null) {
+					unit = "optional";
+				}
+				else {
+					unit = currIngredient.Unit;
+				}
+
 				var ingredient = "<tr>"
-					+ "<td class='amount'>" + String(currIngredient.quantity) + " " + String(currIngredient.unit) + "</td>"
-					+ "<td class='name'>" + String(currIngredient.name) + "</td>"
+					+ "<td class='amount'>" + String(quantity) + " " + String(unit) + "</td>"
+					+ "<td class='name'>" + String(currIngredient.Name) + "</td>"
 					+ "<td class='currency'>SEK</td>"
-					+ "<td class='price'>" + String(currIngredient.price) + "</td>"
+					+ "<td class='price'>" + 12 + "</td>"
 				+ "</tr>"
 
 				// add the ingredient to the ingredient list
