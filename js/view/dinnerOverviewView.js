@@ -32,15 +32,15 @@ var DinnerOverviewView = function (container, model) {
 			var currentDish = dishes[i];
 		
 			// create part of dishString that will contain the values wanted for each dish
-			var currentDishPrice = model.getDishPrice(currentDish.id);
+			var currentDishPrice = model.getDishPrice(currentDish.RecipeID);
 			currentDishPrice = currentDishPrice * guests;
 			dishPrices.push(currentDishPrice);
 			var dishDiv = "<div class='dish-container'>"
 							+ "<div class='dish-image'>"
-								+ "<img src='images/" + String(currentDish.image) + "'/>"
+								+ "<img src='" + String(currentDish.ImageURL) + "'/>"
 							+ "</div>"
 							+ "<div class='dish-name'>"
-								+ String(currentDish.name)
+								+ String(currentDish.Title)
 							+ "</div>"
 							+ "<div class='dish-price'>"
 								+ String(currentDishPrice)

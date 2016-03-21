@@ -28,11 +28,12 @@ var DinnerOptionView = function (container, model) {
 						+ "<td class='right-align'>Cost</td>"
 					+ "</tr>";
 		var menu = model.getFullMenu();
+		//console.log("This is our menu",menu);
 		if ( menu != [] ) {
 			for (var i = 0; i < menu.length; i++) {
 				var dish = "<tr>"
-							+ "<td>" + String(menu[i].name) + "</td>"
-							+ "<td class='right-align'>" + String(model.getDishPrice(menu[i].id)*guests) + "</td>"
+							+ "<td>" + String(menu[i].Title) + "</td>"
+							+ "<td class='right-align'>" + String(model.getDishPrice(menu[i].RecipeID)*guests) + "</td>"
 						+ "</tr>";
 
 				dinnerString = dinnerString + dish;
