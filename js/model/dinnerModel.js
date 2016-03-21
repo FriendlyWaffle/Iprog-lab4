@@ -123,19 +123,19 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		//TODO Lab 2 
-      var dishType = this.getDish(id).category;
+		id = Number(id);
+	    var dishType = this.getDish(id).Category;
 
-      //Depending on what type of dish, the new dish will overwrite the old one
-      if (dishType === 'starter'){
-           this.menu[0] = id;
-      } else if (dishType === 'main dish'){
-           this.menu[1] = id;
-      } else if (dishType === 'dessert') {
-            this.menu[2] = id;
-          
-      }  
-      this.notifyObservers();
+	    //Depending on what type of dish, the new dish will overwrite the old one
+	    if (dishType === 'Appetizers'){
+	        this.menu[0] = id;
+	    } else if (dishType === 'Main Dish'){
+	        this.menu[1] = id;
+	    } else if (dishType === 'Desserts') {
+	        this.menu[2] = id;
+	          
+	    }  
+	    this.notifyObservers();
 	}
 
 
