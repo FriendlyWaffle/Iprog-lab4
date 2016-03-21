@@ -1,9 +1,10 @@
 //Overall controller
-var OverallController = function(indexView, dinnerOptionView, allDishesView, dishInfoView, fullMenuView, dinnerOverviewView, model) {
+var OverallController = function(indexView, loadingView, dinnerOptionView, allDishesView, dishInfoView, fullMenuView, dinnerOverviewView, model) {
 	//hides and shows views based on user interation
 	//controllers of the individual views send messages to 
 	//the overall controller
 	this.indexView = indexView;
+	this.loadingView = loadingView;
 	this.dinnerOptionView = dinnerOptionView;
 	this.allDishesView = allDishesView;
 	this.dishInfoView = dishInfoView; 
@@ -27,6 +28,13 @@ var OverallController = function(indexView, dinnerOptionView, allDishesView, dis
 	//behöver ingen input
 	// ska hidea indexView???
 	// ska visa dinnerOptionView och allDishesView
+
+	this.loading = function() {
+		this.showView(this.loadingView);
+	}
+	this.endLoading = function() {
+		this.hideView(this.loadingView);
+	}
 
 	this.createDinner = function() {
 		this.hideView(this.indexView);
